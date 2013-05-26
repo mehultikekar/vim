@@ -1,4 +1,5 @@
 call pathogen#infect()
+
 let mapleader = "-"
 
 set expandtab
@@ -34,6 +35,8 @@ if has("autocmd")
   filetype plugin on
   filetype indent on
 endif " has ("autocmd")
+
+source $VIMRUNTIME/macros/matchit.vim
 
 command RemoveTrailingWhitespace %s/\s\+$//ge
 command ChangeDirectory cd %:p:h
