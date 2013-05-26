@@ -1,3 +1,8 @@
+if v:version == 700 && !has('patch167')
+    let g:pathogen_disabled = ['tagbar']
+else
+    let g:pathogen_disabled = ['tagbar_old']
+endif
 call pathogen#infect()
 
 let mapleader = "-"
