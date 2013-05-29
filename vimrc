@@ -40,6 +40,9 @@ inoremap <down> <C-o>gj
 filetype plugin on
 filetype indent on
 
+" Ignore semicolons in bsv
+let g:bsv_ignore_semicolon = 1
+
 " Add margin on left and set its color to simulate left margin in tex
 autocmd FileType tex set foldcolumn=3
 autocmd FileType tex highlight! link FoldColumn Normal
