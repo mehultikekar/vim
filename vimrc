@@ -1,8 +1,10 @@
+" Selectively disable tagbar versions
 if v:version == 700 && !has('patch167')
     let g:pathogen_disabled = ['tagbar']
 else
     let g:pathogen_disabled = ['tagbar_old']
 endif
+" Load all plugins
 call pathogen#infect()
 
 let mapleader = "-"
@@ -24,9 +26,8 @@ nnoremap <space> za
 
 " Soft wrap at word boundaries
 set linebreak
-" Add margin on left and set its color
-set foldcolumn=3
-highlight! link FoldColumn Normal
+set incsearch
+set hlsearch
 
  " Up down by displayed lines rather than actual lines
 nnoremap <up> gk
@@ -34,12 +35,14 @@ nnoremap <down> gj
 inoremap <up> <C-o>gk
 inoremap <down> <C-o>gj
 
-if has("autocmd")
-  " Enabled file type detection
-  " Enabled file language-dependent indenting
-  filetype plugin on
-  filetype indent on
-endif " has ("autocmd")
+" Enabled file type detection
+" Enabled file language-dependent indenting
+filetype plugin on
+filetype indent on
+
+" Add margin on left and set its color to simulate left margin in tex
+autocmd FileType tex set foldcolumn=3
+autocmd FileType tex highlight! link FoldColumn Normal
 
 source $VIMRUNTIME/macros/matchit.vim
 
