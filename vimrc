@@ -29,7 +29,7 @@ set linebreak
 set incsearch
 set hlsearch
 
- " Up down by displayed lines rather than actual lines
+" Up down by displayed lines rather than actual lines
 nnoremap <up> gk
 nnoremap <down> gj
 inoremap <up> <C-o>gk
@@ -44,9 +44,7 @@ filetype indent on
 autocmd FileType tex set foldcolumn=3
 autocmd FileType tex highlight! link FoldColumn Normal
 
-source $VIMRUNTIME/macros/matchit.vim
-
-command RemoveTrailingWhitespace %s/\s\+$//ge
+command TrailingWhitespace let cpos = getpos('.') | %s/\s\+$//ge | call setpos('.', cpos) |
 command ChangeDirectory cd %:p:h
 command W w
 command Q q
