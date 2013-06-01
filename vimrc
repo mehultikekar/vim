@@ -7,6 +7,8 @@ endif
 " Load all plugins
 call pathogen#infect()
 
+" Fix for SuperTab messing up abbrevs with <CR>
+let g:SuperTabCrMapping = 0
 let mapleader = "-"
 
 set expandtab
