@@ -659,7 +659,7 @@ if g:ipy_perform_mappings != 0
     vmap <silent> <M-C> :s/^\([ \t]*\)#/\1/<CR>
 endif
 
-command! -nargs=* IPython :py km_from_string("<args>")
+command! -nargs=* IPython :call SuperTabSetCompletionType('<c-x><c-u>') | :py km_from_string("<args>")
 command! -nargs=0 IPythonClipboard :py km_from_string(vim.eval('@+'))
 command! -nargs=0 IPythonXSelection :py km_from_string(vim.eval('@*'))
 command! -nargs=* IPythonInterrupt :py interrupt_kernel_hack("<args>")
@@ -682,7 +682,7 @@ fun! CompleteIPython(findstart, base)
         while start > 0 && line[start-1] =~ '\k\|\.' "keyword
           let start -= 1
         endwhile
-        echo start
+        " echo start
         python << endpython
 current_line = vim.current.line
 endpython
