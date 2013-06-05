@@ -12,8 +12,9 @@ iabbrev <buffer> rule rule<cr>endrule<up><end>
 iabbrev <buffer> case case<cr>endcase<up><end>
 
 " In normal mode, % to jump cursor between matching pairs
-let s:match_pairs = '\<rule:endrule,module:endmodule,method:endmethod,interface:endinterface,function:endfunction,case:endcase,begin:end\>'
-let s:match_pairs = substitute(s:match_pairs, ':', '\\>:\\<', 'g')
-let b:match_words = substitute(s:match_pairs, ',', '\\>,\\<', 'g')
+let s:match_pairs = '(:),{:},[:],rule:endrule,module:endmodule,method:endmethod,interface:endinterface,function:endfunction,case:endcase,begin:end'
+let s:match_sep = '\<'.substitute(s:match_pairs, ':', '\\>:\\<', 'g').'\>'
+let b:match_words = substitute(s:match_sep, ',', '\\>,\\<', 'g')
+"let b:delimitMate_matchpairs = s:match_pairs
 source $VIMRUNTIME/macros/matchit.vim
 

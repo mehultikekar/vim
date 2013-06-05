@@ -83,7 +83,7 @@ highlight link bsvBoolean Boolean
 highlight link bsvTypeclasses Boolean
 
 highlight link bsvPreproc PreProc
-highlight link bsvScope Ignore
+highlight link bsvScope Keyword
 highlight link bsvScopeIdentifier Function
 
 highlight link bsvDatatypes Type
