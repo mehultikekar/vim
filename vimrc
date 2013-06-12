@@ -54,6 +54,7 @@ command ChangeDirectory cd %:p:h
 command W w
 command Q q
 command WQ wq
+command LogClean g/\(SNPS\|clk_gate\)/d
 
 " Clear line and go to next
 nnoremap <leader>dd 0Dj
