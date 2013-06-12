@@ -18,3 +18,7 @@ let b:match_words = substitute(s:match_sep, ',', '\\>,\\<', 'g')
 "let b:delimitMate_matchpairs = s:match_pairs
 source $VIMRUNTIME/macros/matchit.vim
 
+setlocal expandtab      " use spaces, not tab
+setlocal shiftwidth=4   " number of spaces to use for each indent
+setlocal tabstop=4      " number of spaces that a <Tab> counts for
+
