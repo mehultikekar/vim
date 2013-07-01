@@ -9,6 +9,8 @@ call pathogen#infect()
 
 " Fix for SuperTab messing up abbrevs with <CR>
 let g:SuperTabCrMapping = 0
+let g:SuperTabDefaultCompletionType = 'context'
+
 let mapleader = "-"
 
 set expandtab
@@ -42,9 +44,6 @@ inoremap <down> <C-o>gj
 filetype plugin on
 filetype indent on
 
-" Ignore semicolons in bsv
-let g:bsv_ignore_semicolon = 1
-
 " Add margin on left and set its color to simulate left margin in tex
 autocmd FileType tex set foldcolumn=3
 autocmd FileType tex highlight! link FoldColumn Normal
@@ -58,3 +57,10 @@ command LogClean g/\(SNPS\|clk_gate\)/d
 
 " Clear line and go to next
 nnoremap <leader>dd 0Dj
+
+" Ignore semicolons in bsv
+let g:bsv_ignore_semicolon = 1
+autocmd FileType bsv setlocal dict+=~/.vim/bundle/bsv/bsv.words
+autocmd FileType bsv call SuperTabSetDefaultCompletionType('<c-x><c-k>')
+
+autocmd BufNewFile,BufRead let b:verilog_indent_modules = 1
