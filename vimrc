@@ -2,7 +2,7 @@
 if v:version == 700 && !has('patch167')
     let g:pathogen_disabled = ['tagbar']
 else
-    let g:pathogen_disabled = ['tagbar_old']
+    let g:pathogen_disabled = ['tagbar-old']
 endif
 " Load all plugins
 call pathogen#infect()
