@@ -1,7 +1,3 @@
-[subtree "bundles/snipmate"]
-	url = git://github.com/ervandew/snipmate.vim.git
-	path = bundles/snipmate
-	branch = master
 [subtree "bundle/snipmate"]
 	url = git://github.com/ervandew/snipmate.vim.git
 	path = bundle/snipmate
