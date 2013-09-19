@@ -7,6 +7,17 @@ endif
 " Load all plugins
 call pathogen#infect()
 
+set guifont=Inconsolata\ 12
+" Solarized options
+if $TERM == "screen"
+    set term=xterm-256color
+endif
+if has('gui_running') || ($TERM == "xterm-256color") || ($TERM == "screen")
+    let g:solarized_termtrans=1
+    set background=dark
+    colorscheme solarized
+endif
+
 " Fix for SuperTab messing up abbrevs with <CR>
 let g:SuperTabCrMapping = 0
 let g:SuperTabDefaultCompletionType = 'context'
@@ -44,6 +55,8 @@ inoremap <down> <C-o>gj
 filetype plugin on
 filetype indent on
 
+autocmd FileType pandoc iabbrev times ×
+
 " Add margin on left and set its color to simulate left margin in tex
 autocmd FileType tex set foldcolumn=3
 autocmd FileType tex highlight! link FoldColumn Normal
@@ -64,3 +77,13 @@ autocmd FileType bsv setlocal dict+=~/.vim/bundle/bsv/bsv.words
 autocmd FileType bsv call SuperTabSetDefaultCompletionType('<c-x><c-k>')
 
 autocmd BufNewFile,BufRead let b:verilog_indent_modules = 1
+
+" Change diff colors
+highlight! link DiffText MatchParen
+
+"func Eatchar(pat)
+"    let c = nr2char(getchar(0))
+"    return (c =~ a:pat) ? '' : c
+"endfunc
+"iabbr <silent> lm λ<C-R>=Eatchar('\s')<CR>
+"iabbr <silent> xx ×<C-R>=Eatchar('\s')<CR>
