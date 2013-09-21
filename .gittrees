@@ -14,3 +14,7 @@
 	url = git://github.com/vim-pandoc/vim-pandoc.git
 	path = bundle/pandoc
 	branch = master
+[subtree "bundle/vimroom"]
+	url = git://github.com/mikewest/vimroom.git
+	path = bundle/vimroom
+	branch = master

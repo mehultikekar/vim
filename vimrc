@@ -18,6 +18,14 @@ if has('gui_running') || ($TERM == "xterm-256color") || ($TERM == "screen")
     colorscheme solarized
 endif
 
+let g:pandoc_no_empty_implicits = 1
+let g:pandoc_no_spans = 1
+let g:pandoc_no_folding = 1
+
+let g:vimroom_ctermbackground="8"
+let g:vimroom_guibackground="#002b36"
+let g:vimroom_width=100
+
 " Fix for SuperTab messing up abbrevs with <CR>
 let g:SuperTabCrMapping = 0
 let g:SuperTabDefaultCompletionType = 'context'
@@ -55,11 +63,11 @@ inoremap <down> <C-o>gj
 filetype plugin on
 filetype indent on
 
-autocmd FileType pandoc iabbrev times ×
+"autocmd FileType pandoc iabbrev times ×
 
 " Add margin on left and set its color to simulate left margin in tex
-autocmd FileType tex set foldcolumn=3
-autocmd FileType tex highlight! link FoldColumn Normal
+"autocmd FileType tex set foldcolumn=3
+"autocmd FileType tex highlight! link FoldColumn Normal
 
 command TrailingWhitespace let cpos = getpos('.') | %s/\s\+$//ge | call setpos('.', cpos) |
 command ChangeDirectory cd %:p:h
