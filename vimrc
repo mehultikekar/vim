@@ -87,3 +87,4 @@ highlight! link DiffText MatchParen
 "endfunc
 "iabbr <silent> lm λ<C-R>=Eatchar('\s')<CR>
 "iabbr <silent> xx ×<C-R>=Eatchar('\s')<CR>
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
