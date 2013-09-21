@@ -18,3 +18,7 @@
 	url = git://github.com/mikewest/vimroom.git
 	path = bundle/vimroom
 	branch = master
+[subtree "bundle/ipython"]
+	url = git://github.com/ivanov/vim-ipython.git
+	path = bundle/ipython
+	branch = master
