@@ -205,7 +205,10 @@ def disconnect():
 def get_doc(word, level=0):
     if kc is None:
         return ["Not connected to IPython, cannot query: %s" % word]
-    msg_id = kc.shell_channel.object_info(word, level)
+    try:
+        msg_id = kc.shell_channel.object_info(word, level)
+    except TypeError:
+        msg_id = kc.shell_channel.object_info(word) # for ipython 0.12 in EPD 7.3.2
     doc = get_doc_msg(msg_id)
     # get around unicode problems when interfacing with vim
     return [d.encode(vim_encoding) for d in doc]
