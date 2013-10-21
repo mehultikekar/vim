@@ -26,3 +26,7 @@
 	url = git://github.com/ehamberg/vim-cute-python
 	path = bundle/cute-python
 	branch = moresymbols
+[subtree "bundle/haskellConceal"]
+	url = git://github.com/Twinside/vim-haskellConceal
+	path = bundle/haskellConceal
+	branch = master
