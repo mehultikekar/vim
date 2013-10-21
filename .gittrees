@@ -22,3 +22,7 @@
 	url = git://github.com/ivanov/vim-ipython.git
 	path = bundle/ipython
 	branch = master
+[subtree "bundle/haskell"]
+	url = git://github.com/vim-scripts/Haskell-Conceal
+	path = bundle/haskell
+	branch = master
