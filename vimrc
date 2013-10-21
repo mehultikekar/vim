@@ -7,7 +7,8 @@ endif
 " Load all plugins
 call pathogen#infect()
 
-set guifont=Inconsolata\ 12
+"set guifont=DejaVu\ Sans\ Mono\ 10
+set guifont=Inconsolata\ Sym\ 12
 " Solarized options
 if $TERM == "screen"
     set term=xterm-256color
@@ -96,3 +97,4 @@ highlight! link DiffText MatchParen
 "iabbr <silent> lm λ<C-R>=Eatchar('\s')<CR>
 "iabbr <silent> xx ×<C-R>=Eatchar('\s')<CR>
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+set laststatus=2
