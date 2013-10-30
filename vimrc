@@ -13,6 +13,7 @@ set guifont=Inconsolata\ Sym\ 12
 if $TERM == "screen"
     set term=xterm-256color
 endif
+let g:solarized_italic=0
 if has('gui_running') || ($TERM == "xterm-256color") || ($TERM == "screen")
     let g:solarized_termtrans=1
     set background=dark
@@ -79,22 +80,25 @@ command LogClean g/\(SNPS\|clk_gate\)/d
 
 " Clear line and go to next
 nnoremap <leader>dd 0Dj
+nnoremap <silent> <esc> :noh<cr><esc>
 
 " Ignore semicolons in bsv
 let g:bsv_ignore_semicolon = 1
 autocmd FileType bsv setlocal dict+=~/.vim/bundle/bsv/bsv.words
 autocmd FileType bsv call SuperTabSetDefaultCompletionType('<c-x><c-k>')
 
+autocmd FileType cpp nnoremap <silent> <buffer> <cr> :CSearchContext<cr>
+autocmd FileType cpp call SuperTabSetDefaultCompletionType('<c-x><c-u>')
+
 autocmd BufNewFile,BufRead let b:verilog_indent_modules = 1
 
 " Change diff colors
 highlight! link DiffText MatchParen
 
-"func Eatchar(pat)
-"    let c = nr2char(getchar(0))
-"    return (c =~ a:pat) ? '' : c
-"endfunc
-"iabbr <silent> lm λ<C-R>=Eatchar('\s')<CR>
-"iabbr <silent> xx ×<C-R>=Eatchar('\s')<CR>
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 set laststatus=2
+
+if has('gui_running')
+    autocmd BufEnter * sign define dummy
+    autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
+endif

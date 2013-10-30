@@ -30,3 +30,7 @@
 	url = git://github.com/Twinside/vim-haskellConceal
 	path = bundle/haskellConceal
 	branch = master
+[subtree "bundle/matchem"]
+	url = git://github.com/ervandew/matchem.git
+	path = bundle/matchem
+	branch = master
