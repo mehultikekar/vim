@@ -8,7 +8,7 @@ endif
 call pathogen#infect()
 
 "set guifont=DejaVu\ Sans\ Mono\ 10
-set guifont=Inconsolata\ Sym\ 12
+set guifont=Inconsolata\ 12
 " Solarized options
 if $TERM == "screen"
     set term=xterm-256color
@@ -79,8 +79,10 @@ command WQ wq
 command LogClean g/\(SNPS\|clk_gate\)/d
 
 " Clear line and go to next
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
 nnoremap <leader>dd 0Dj
-nnoremap <silent> <esc> :noh<cr><esc>
+nnoremap <silent> m :nohlsearch<cr>
 
 " Ignore semicolons in bsv
 let g:bsv_ignore_semicolon = 1
@@ -102,3 +104,8 @@ if has('gui_running')
     autocmd BufEnter * sign define dummy
     autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
 endif
+
+command Conceal set conceallevel=1
+command Reveal set conceallevel=0
+
+au BufNewFile,BufRead *.lib set filetype=dummy

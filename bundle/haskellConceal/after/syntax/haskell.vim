@@ -30,7 +30,7 @@
 "   - 1.1: Better handling of non utf-8 systems, and avoid some
 "           concealing operations on windows on some fonts
 "
-if exists('g:no_haskell_conceal') || !has('conceal') || &enc != 'utf-8' || !has('gui_running')
+if exists('g:no_haskell_conceal') || !has('conceal') || &enc != 'utf-8'
     finish
 endif
 
