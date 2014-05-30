@@ -30,3 +30,7 @@
 	url = git://github.com/Twinside/vim-haskellConceal
 	path = bundle/haskellConceal
 	branch = master
+[subtree "bundle/vim-fish"]
+	url = https://github.com/dag/vim-fish
+	path = bundle/vim-fish
+	branch = master

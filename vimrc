@@ -14,11 +14,9 @@ if $TERM == "screen"
     set term=xterm-256color
 endif
 let g:solarized_italic=0
-if has('gui_running') || ($TERM == "xterm-256color") || ($TERM == "screen")
-    let g:solarized_termtrans=1
-    set background=dark
-    colorscheme solarized
-endif
+let g:solarized_termtrans=1
+set background=dark
+colorscheme solarized
 
 let g:pandoc_no_empty_implicits = 1
 let g:pandoc_no_spans = 1
@@ -109,3 +107,5 @@ command Conceal set conceallevel=1
 command Reveal set conceallevel=0
 
 au BufNewFile,BufRead *.lib set filetype=dummy
+
+set shell=/bin/bash
