@@ -8,12 +8,8 @@ endif
 call pathogen#infect()
 
 "set guifont=DejaVu\ Sans\ Mono\ 10
-set guifont=Inconsolata\ 12
+set guifont=Inconsolata\ 11
 " Solarized options
-if $TERM == "screen"
-    set term=xterm-256color
-endif
-let g:solarized_italic=0
 let g:solarized_termtrans=1
 set background=dark
 colorscheme solarized
@@ -108,4 +104,4 @@ command Reveal set conceallevel=0
 
 au BufNewFile,BufRead *.lib set filetype=dummy
 
-set shell=/bin/bash
+set shell=/bin/tcsh
