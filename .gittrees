@@ -34,3 +34,7 @@
 	url = https://github.com/dag/vim-fish
 	path = bundle/vim-fish
 	branch = master
+[subtree "bundle/julia-vim"]
+	url = https://github.com/JuliaLang/julia-vim
+	path = bundle/julia-vim
+	branch = master
