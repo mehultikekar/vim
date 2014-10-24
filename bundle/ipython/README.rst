@@ -2,7 +2,9 @@
 vim-ipython
 ###########
 
-A two-way integration between Vim and IPython 0.11+
+A two-way integration between Vim and IPython.
+
+IPython versions 0.11.x, 0.12.x, 0.13.x, 1.x and 2.x
 
 * author: Paul Ivanov (http://pirsquared.org)
 * github: http://github.com/ivanov/vim-ipython
@@ -18,7 +20,7 @@ The big change from previous versions of ``ipy.vim`` is that it no longer
 requires the old brittle ``ipy_vimserver.py`` instantiation, and since
 it uses just vim and python, it is platform independent (i.e. works
 even on windows, unlike the previous \*nix only solution). The requirements
-are IPython 0.11+ with zeromq capabilities, vim compiled with +python.
+are IPython 0.11 or newer with zeromq capabilities, vim compiled with +python.
 
 If you can launch ``ipython qtconsole`` or ``ipython kernel``, and
 ``:echo has('python')`` returns 1 in vim, you should be good to go.
@@ -39,13 +41,18 @@ IPython 0.11, it would look like this::
 
   :IPython --existing --shell=41882 --iopub=43286 --stdin=34987 --hb=36697
 
-and for IPython 0.12 and later, like this::
+and for IPython 0.12 through IPython 2.0 like this::
 
   :IPython --existing kernel-85997.json
 
 There also exists to convenience commands: ``:IPythonClipboard`` just uses the
 ``+`` register to get the connection string, whereas ``:IPythonXSelection``
 uses the ``*`` register and passes it to ``:IPython``.
+
+**NEW in IPython 2.0**
+
+vim-ipython can now interoperate with non-Python kernels.
+
 
 **NEW in IPython 0.12**!
 Since IPython 0.12, you can simply use::
@@ -208,9 +215,10 @@ Known issues:
   <https://github.com/ipython/ipython/issues/1873>`_
 - The ipdb integration is not yet re-implemented. Pending 
   [IPython PR #3089](https://github.com/ipython/ipython/pull/3089)
-- If you're running inside ``screen``, read about the ``<CTRL-S>`` issue `here
-  <http://munkymorgy.blogspot.com/2008/07/screen-ctrl-s-bug.html>`_, and add
-  this line to your ``.bashrc`` to fix it::
+- If ``<CTRL-S>`` does not work inside your terminal, but you are able to run
+  some of the other commands successfully (``<F5>``, for example), try running
+  this command before launching vim in the terminal (add it to your
+  ``.bashrc`` if it fixes the issue)::
 
     stty stop undef # to unmap ctrl-s
 
@@ -284,6 +292,7 @@ pull request with your attribution.
 * @flacjacket for pointing out and providing fix for IPython API change
 * @memeplex for fixing the identifier grabbing on e.g. non-PEP8 compliant code
 * @pydave for IPythonTerminate (sending SIGTERM using our hack)
+* @luispedro for IPythonNew
 
 Similar Projects
 ----------------
