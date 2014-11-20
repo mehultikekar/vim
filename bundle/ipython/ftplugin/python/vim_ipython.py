@@ -552,7 +552,11 @@ def set_pid():
     Explicitly ask the ipython kernel for its pid
     """
     global pid
-    lines = '\n'.join(['import os', '_pid = os.getpid()'])
+    if vim.eval("&filetype") == "python":
+        lines = '\n'.join(['import os', '_pid = os.getpid()'])
+    else: # julia
+        lines = '_pid = getpid()'
+
     msg_id = send(lines, silent=True, user_variables=['_pid'])
 
     # wait to get message back from kernel
