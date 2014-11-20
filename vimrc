@@ -100,3 +100,5 @@ command Reveal set conceallevel=0
 au BufNewFile,BufRead *.lib set filetype=dummy
 
 set shell=/bin/tcsh
+
+command Link :normal i [<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=">link</a>]
