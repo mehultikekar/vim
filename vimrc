@@ -101,4 +101,6 @@ au BufNewFile,BufRead *.lib set filetype=dummy
 
 set shell=/bin/tcsh
 
+set directory^=~/.vim/swaps
+set backupdir^=~/.vim/backups
 command Link :normal i [<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=">link</a>]
