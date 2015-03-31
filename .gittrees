@@ -46,3 +46,7 @@
 	url = https://github.com/shime/vim-livedown
 	path = bundle/vim-livedown
 	branch = master
+[subtree "bundle/vim-pandoc-syntax"]
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax
+	path = bundle/vim-pandoc-syntax
+	branch = master
