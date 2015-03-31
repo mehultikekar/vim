@@ -5,6 +5,7 @@ call pathogen#infect()
 set guifont=Inconsolata\ 11
 " Solarized options
 let g:solarized_termtrans=1
+let g:solarized_italic=0
 set background=dark
 colorscheme solarized
 
@@ -66,10 +67,17 @@ command Q q
 command WQ wq
 command LogClean g/\(SNPS\|clk_gate\)/d
 
-" Clear line and go to next
+" Copy to system clipboard (ctrl-v to paste elsewhere)
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
+" Paste from system clipboard
+nnoremap <leader>p "+gp
+nnoremap <leader>P "+gP
+
+" Clear line and go to next
 nnoremap <leader>dd 0Dj
+
+" Clear search highlights
 nnoremap <silent> m :nohlsearch<cr>
 
 " Ignore semicolons in bsv
