@@ -42,3 +42,7 @@
 	url = https://github.com/mbbill/undotree
 	path = bundle/undotree
 	branch = master
+[subtree "bundle/vim-livedown"]
+	url = https://github.com/shime/vim-livedown
+	path = bundle/vim-livedown
+	branch = master

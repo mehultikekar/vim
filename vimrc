@@ -54,6 +54,12 @@ inoremap <down> <C-o>gj
 filetype plugin on
 filetype indent on
 
+" livedown plugin options
+let g:livedown_port=8000
+
+" md files are detected as Modula-2 by default
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 "autocmd FileType pandoc iabbrev times ×
 
 " Add margin on left and set its color to simulate left margin in tex
@@ -107,7 +113,7 @@ command Reveal set conceallevel=0
 
 au BufNewFile,BufRead *.lib set filetype=dummy
 
-set shell=/bin/tcsh
+set shell=bash
 
 set directory^=~/.vim/swaps
 set backupdir^=~/.vim/backups
