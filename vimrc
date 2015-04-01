@@ -54,8 +54,8 @@ inoremap <down> <C-o>gj
 filetype plugin on
 filetype indent on
 
-" livedown plugin options
-let g:livedown_port=8000
+" vim-instant-markdown plugin options
+let g:instant_markdown_autostart=0
 
 " md files are detected as Modula-2 by default
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
