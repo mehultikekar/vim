@@ -10,10 +10,6 @@
 	url = git://github.com/tpope/vim-fugitive.git
 	path = bundle/fugitive
 	branch = master
-[subtree "bundle/pandoc"]
-	url = git://github.com/vim-pandoc/vim-pandoc.git
-	path = bundle/pandoc
-	branch = master
 [subtree "bundle/vimroom"]
 	url = git://github.com/mikewest/vimroom.git
 	path = bundle/vimroom
@@ -41,12 +37,4 @@
 [subtree "bundle/undotree"]
 	url = https://github.com/mbbill/undotree
 	path = bundle/undotree
-	branch = master
-[subtree "bundle/vim-livedown"]
-	url = https://github.com/shime/vim-livedown
-	path = bundle/vim-livedown
-	branch = master
-[subtree "bundle/vim-pandoc-syntax"]
-	url = https://github.com/vim-pandoc/vim-pandoc-syntax
-	path = bundle/vim-pandoc-syntax
 	branch = master
