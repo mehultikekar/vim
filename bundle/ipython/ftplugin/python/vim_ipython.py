@@ -514,6 +514,12 @@ def run_this_line(dedent=False):
     print_prompt(line, msg_id)
 
 @with_subchannel
+def show_cword():
+    word = vim.eval('expand("<cword>")')
+    msg_id = send(word)
+    print_prompt(word, msg_id)
+
+@with_subchannel
 def run_command(cmd):
     msg_id = send(cmd)
     print_prompt(cmd, msg_id)

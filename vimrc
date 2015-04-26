@@ -66,7 +66,6 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 "autocmd FileType tex set foldcolumn=3
 "autocmd FileType tex highlight! link FoldColumn Normal
 
-command TrailingWhitespace let cpos = getpos('.') | %s/\s\+$//ge | call setpos('.', cpos) |
 command ChangeDirectory cd %:p:h
 command W w
 command Q q
@@ -84,7 +83,7 @@ nnoremap <leader>P "+gP
 nnoremap <leader>dd 0Dj
 
 " Clear search highlights
-nnoremap <silent> m :nohlsearch<cr>
+nnoremap <silent> , :nohlsearch<cr>
 
 " Ignore semicolons in bsv
 let g:bsv_ignore_semicolon = 1
@@ -118,3 +117,20 @@ set shell=bash
 set directory^=~/.vim/swaps
 set backupdir^=~/.vim/backups
 command Link :normal i [<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=">link</a>]
+
+" color the 81st column of wide lines
+highlight ColorColumn ctermbg=black guibg=#073642
+call matchadd('ColorColumn', '\%81v', 100)
+
+" swap C-v and v
+nnoremap v <c-v>
+nnoremap <c-v> v
+vnoremap v <c-v>
+vnoremap <c-v> v
+
+" vim-ipython options
+let g:ipy_perform_mappings=0
+map  <buffer> <silent> <c-cr> :py run_this_line()<cr>
+imap <buffer> <silent> <c-cr> <C-o>:py run_this_line()<cr>
+xmap <buffer> <silent> <c-cr> :py run_these_lines()<cr>
+map  <buffer> <silent> <c-s> :py show_cword()<cr>
