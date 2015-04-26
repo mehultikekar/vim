@@ -38,3 +38,7 @@
 	url = https://github.com/mbbill/undotree
 	path = bundle/undotree
 	branch = master
+[subtree "bundle/vim-better-whitespace"]
+	url = https://github.com/ntpeters/vim-better-whitespace
+	path = bundle/vim-better-whitespace
+	branch = master
