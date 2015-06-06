@@ -1,8 +1,6 @@
 " Load all plugins
 call pathogen#infect()
 
-"set guifont=DejaVu\ Sans\ Mono\ 10
-set guifont=Inconsolata\ 11
 " Solarized options
 let g:solarized_termtrans=1
 let g:solarized_italic=0
@@ -114,6 +112,7 @@ au BufNewFile,BufRead *.lib set filetype=dummy
 
 set shell=bash
 
+set viminfo+=n~/.vim/viminfo
 set directory^=~/.vim/swaps
 set backupdir^=~/.vim/backups
 command Link :normal i [<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=">link</a>]
