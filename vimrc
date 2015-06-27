@@ -4,6 +4,7 @@ call pathogen#infect()
 " Solarized options
 let g:solarized_termtrans=1
 let g:solarized_italic=0
+let g:solarized_contrast="high"
 set background=dark
 colorscheme solarized
 
