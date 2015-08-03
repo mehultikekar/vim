@@ -86,8 +86,6 @@ nnoremap <silent> , :nohlsearch<cr>
 
 " Ignore semicolons in bsv
 let g:bsv_ignore_semicolon = 1
-autocmd FileType bsv setlocal dict+=~/.vim/bundle/bsv/bsv.words
-autocmd FileType bsv call SuperTabSetDefaultCompletionType('<c-x><c-k>')
 
 autocmd FileType cpp nnoremap <silent> <buffer> <cr> :CSearchContext<cr>
 autocmd FileType cpp call SuperTabSetDefaultCompletionType('<c-x><c-u>')
