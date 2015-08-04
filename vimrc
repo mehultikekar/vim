@@ -84,9 +84,6 @@ nnoremap <leader>dd 0Dj
 " Clear search highlights
 nnoremap <silent> , :nohlsearch<cr>
 
-" Ignore semicolons in bsv
-let g:bsv_ignore_semicolon = 1
-
 autocmd FileType cpp nnoremap <silent> <buffer> <cr> :CSearchContext<cr>
 autocmd FileType cpp call SuperTabSetDefaultCompletionType('<c-x><c-u>')
 
